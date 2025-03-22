@@ -1,0 +1,22 @@
+[project]
+name = "gmail-plugin"
+version = "1.0"
+description = "A tool to enable access to gmail tools in MCP clients"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp>=1.5.0",
+    "google-api-python-client>=2.156.0",
+    "google-auth-httplib2>=0.2.0",
+    "google-auth-oauthlib>=1.2.1",
+    "aiohttp>=3.9.0"
+]
+[[project.authors]]
+email = "sanchisingh0212@gmail.com"
+
+[build-system]
+requires = [ "hatchling",]
+build-backend = "hatchling.build"
+
+[project.scripts]
+gmail-plugin = "gmail_plugin:main"

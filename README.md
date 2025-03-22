@@ -5,6 +5,8 @@
 
 A powerful MCP server that enables Gmail integration, allowing you to manage emails directly through MCP clients. This plugin provides seamless access to Gmail's core functionality including reading, sending, and managing emails.
 
+> **Reference**: For a sample MCP server implementation using uvx, check out [this example](https://github.com/modelcontextprotocol/uvx/tree/main/examples/sample-mcp-server).
+
 ## ✨ Features
 
 - 📧 Send and receive emails
@@ -30,17 +32,31 @@ git clone https://github.com/yourusername/gmail-plugin.git
 cd gmail-plugin
 ```
 
-2. Install dependencies:
+2. Install dependencies (choose one method):
+
 ```bash
+# Method 1: Install in editable mode
 uv pip install -e .
+
+# Method 2: Install using requirements.txt
+uv pip install -r requirements.txt
+
+# Method 3: Install using uv sync (recommended)
+uv sync --dev --all-extras
 ```
 
 3. Configure your Gmail API credentials:
    - Go to [Google Cloud Console](https://console.cloud.google.com)
    - Create a new project or select existing one
    - Enable Gmail API
-   - Create OAuth 2.0 credentials
-   - Download the credentials file
+   - Configure OAuth consent screen:
+     - Select "External" user type (no publishing required)
+     - Go to the Audiences tab : Add your email as a "Test user"
+     - Add OAuth scope: `https://www.googleapis.com/auth/gmail/modify` 
+   - Create OAuth 2.0 credentials:
+     - Choose "Desktop App" as application type
+     - Download the JSON credentials file  
+   - Save the credentials file and note its absolute path (will be used for `--creds-file-path`)
 
 ### Configuration
 
@@ -54,9 +70,13 @@ Add this to your MCP client configuration:
     "command": "uv",
     "args": [
       "--directory",
-      "C:\\Users\\sanch\\Desktop\\gmail_plugin\\gmail-plugin",
+      "[absolute path to working directory]",
       "run",
-      "gmail-plugin"
+      "server.py"
+      "--creds-file-path",
+      "[absolute-path-to-credentials-file]",
+      "--token-path",
+      "[absolute-path-to-access-tokens-file]"
     ]
   }
 }

@@ -55,7 +55,7 @@ Add this to your MCP client configuration (for Claude Desktop) : claude_desktop_
     "command": "uv",
     "args": [
       "--directory",
-      [absolute path to working directory],
+      "[absolute path to working directory]",
       "run",
       "server.py"
     ]

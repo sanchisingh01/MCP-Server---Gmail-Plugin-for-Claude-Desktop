@@ -40,13 +40,14 @@ uv pip install -e .
    - Create a new project or select existing one
    - Enable Gmail API
    - Create OAuth 2.0 credentials
-   - Download the credentials file
+   - Download the credentials file, rename it and copy the absolute path of credentials file. This will be passed as parameter in --cred-file-path
+   - 
 
 ### Configuration
 
 #### For Development/Unpublished Servers
 
-Add this to your MCP client configuration:
+Add this to your MCP client configuration (for Claude Desktop) : claude_desktop_config.json
 
 ```json
 "mcpServers": {
@@ -54,9 +55,9 @@ Add this to your MCP client configuration:
     "command": "uv",
     "args": [
       "--directory",
-      "C:\\Users\\sanch\\Desktop\\gmail_plugin\\gmail-plugin",
+      [absolute path to working directory],
       "run",
-      "gmail-plugin"
+      "server.py"
     ]
   }
 }
@@ -81,7 +82,7 @@ Add this to your MCP client configuration:
 
 1. Sync dependencies:
 ```bash
-uv sync
+uv sync 
 ```
 
 2. Build package:

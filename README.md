@@ -7,6 +7,10 @@ A powerful MCP server that enables Gmail integration, allowing you to manage ema
 
 > **Reference**: For a sample MCP server implementation using uvx, check out [this example](https://github.com/modelcontextprotocol/uvx/tree/main/examples/sample-mcp-server).
 
+## 🎥 Demo
+
+https://github.com/yourusername/gmail-plugin/assets/your-user-id/demo-video-id
+
 ## ✨ Features
 
 - 📧 Send and receive emails

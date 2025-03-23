@@ -9,7 +9,7 @@ A powerful MCP server that enables Gmail integration, allowing you to manage ema
 
 ## 🎥 Demo
 
-https://github.com/yourusername/gmail-plugin/assets/your-user-id/demo-video-id
+https://github.com/user-attachments/assets/df9e86cf-1f6b-4265-9c68-b3ed88103d1f
 
 ## ✨ Features
 
